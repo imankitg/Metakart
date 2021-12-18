@@ -11,6 +11,7 @@ import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { CardActionArea, Link } from "@mui/material";
 import data from "../data";
+import { useNavigate } from "react-router-dom";
 
 const Item = styled(Paper)(({ theme }) => ({
   ...theme.typography.body2,
@@ -20,12 +21,13 @@ const Item = styled(Paper)(({ theme }) => ({
 }));
 
 export default function SimpleContainer() {
+  const navigate = useNavigate();
   return (
     <React.Fragment>
       <CssBaseline />
       <Container maxWidth="xl" style={{ paddingTop: 20 }}>
         <Box sx={{ flexGrow: 1 }}>
-          <h2 style={{ 'margin': 'inherit', paddingTop: 10, paddingBottom: 20 }}>
+          <h2 style={{ margin: "inherit", paddingTop: 10, paddingBottom: 20 }}>
             Products
           </h2>
           <Grid
@@ -37,7 +39,9 @@ export default function SimpleContainer() {
               <Grid item xs={12} sm={4} md={3} key={index}>
                 <Item color="primary">{d.name}</Item>
                 <Card component={Link} to="/about">
-                  <CardActionArea >
+                  <CardActionArea
+                    onClick={() => navigate("/about")}
+                  >
                     <CardMedia
                       component="img"
                       height="auto"
@@ -50,9 +54,7 @@ export default function SimpleContainer() {
                       <Typography gutterBottom variant="h5" component="div">
                         {d.brand}
                       </Typography>
-                      <Typography variant="body2">
-                        {d.description}
-                      </Typography>
+                      <Typography variant="body2">{d.description}</Typography>
                     </CardContent>
                   </CardActionArea>
                 </Card>
