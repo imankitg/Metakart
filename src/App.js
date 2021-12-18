@@ -1,12 +1,13 @@
-import { Container } from '@mui/material';
 import './App.css';
-import Navbar from './components/Navbar';
+import PrimarySearchAppBar from './components/PrimarySearchAppBar';
+import SimpleContainer from './components/SimpleContainer';
+
 
 function App() {
   return (
     <div className="App">
-      <Navbar/>
-      <Container/>
+      <PrimarySearchAppBar/>
+      <SimpleContainer/>
     </div>
   );
 }
