@@ -25,7 +25,7 @@ export default function SimpleContainer() {
       <CssBaseline />
       <Container maxWidth="xl" style={{ paddingTop: 20 }}>
         <Box sx={{ flexGrow: 1 }}>
-          <h2 style={{ margin: "inherit", paddingTop: 10, paddingBottom: 20 }}>
+          <h2 style={{ 'margin': 'inherit', paddingTop: 10, paddingBottom: 20 }}>
             Products
           </h2>
           <Grid
@@ -35,7 +35,7 @@ export default function SimpleContainer() {
           >
             {data.map((d, index) => (
               <Grid item xs={12} sm={4} md={3} key={index}>
-                <Item>{d.name}</Item>
+                <Item color="primary">{d.name}</Item>
                 <Card component={Link} to="/about">
                   <CardActionArea >
                     <CardMedia
@@ -51,9 +51,7 @@ export default function SimpleContainer() {
                         {d.brand}
                       </Typography>
                       <Typography variant="body2">
-                        Lizards are a widespread group of squamate reptiles,
-                        with over 6,000 species, ranging across all continents
-                        except Antarctica
+                        {d.description}
                       </Typography>
                     </CardContent>
                   </CardActionArea>
