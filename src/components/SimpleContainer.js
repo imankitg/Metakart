@@ -69,6 +69,7 @@ export default function SimpleContainer() {
           justifyContent: "center",
           backgroundColor: "#36454F",
           color: "white",
+          marginTop: 26
         }}
       >
         <h4>Copyright &copy; Metakart 2021</h4>
