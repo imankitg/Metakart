@@ -1,9 +1,9 @@
 import * as React from "react";
 import CssBaseline from "@mui/material/CssBaseline";
-import { experimentalStyled as styled } from "@mui/material/styles";
+
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
-import Paper from "@mui/material/Paper";
+
 import Grid from "@mui/material/Grid";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
@@ -12,13 +12,6 @@ import Typography from "@mui/material/Typography";
 import { CardActionArea, Link } from "@mui/material";
 import data from "../data";
 import { useNavigate } from "react-router-dom";
-
-const Item = styled(Paper)(({ theme }) => ({
-  ...theme.typography.body2,
-  padding: theme.spacing(2),
-  textAlign: "center",
-  color: theme.palette.text.secondary,
-}));
 
 export default function SimpleContainer() {
   const navigate = useNavigate();
@@ -37,7 +30,7 @@ export default function SimpleContainer() {
           >
             {data.map((d, index) => (
               <Grid item xs={12} sm={4} md={3} key={index}>
-                <Item color="primary">{d.name}</Item>
+                
                 <Card component={Link} to="/about">
                   <CardActionArea
                     onClick={() => navigate("/about")}
@@ -52,9 +45,9 @@ export default function SimpleContainer() {
                       style={{ color: "white", backgroundColor: "grey" }}
                     >
                       <Typography gutterBottom variant="h5" component="div">
-                        {d.brand}
+                        {d.name}
                       </Typography>
-                      <Typography variant="body2">{d.description}</Typography>
+                      <Typography variant="body2">{d.price}</Typography>
                     </CardContent>
                   </CardActionArea>
                 </Card>
