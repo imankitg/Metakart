@@ -1,5 +1,6 @@
-import * as React from "react";
+import React, { useState } from "react";
 import CssBaseline from "@mui/material/CssBaseline";
+import Spinner from "./Spinner";
 
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
@@ -9,16 +10,20 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
-import { CardActionArea, Link } from "@mui/material";
+import { CardActionArea } from "@mui/material";
 import data from "../data";
 import { useNavigate } from "react-router-dom";
 
 export default function SimpleContainer() {
+  // const [loading, setLoading] = useState(false);
+
   const navigate = useNavigate();
+  // setLoading(false);
   return (
     <React.Fragment>
+      {/* {loading && <Spinner/>} */}
       <CssBaseline />
-      <Container maxWidth="xl" style={{ paddingTop: 20 }}>
+      <Container maxWidth="lg" style={{ paddingTop: 20 }}>
         <Box sx={{ flexGrow: 1 }}>
           <h2 style={{ margin: "inherit", paddingTop: 10, paddingBottom: 20 }}>
             Products
@@ -31,15 +36,16 @@ export default function SimpleContainer() {
             {data.map((d, index) => (
               <Grid item xs={12} sm={4} md={3} key={index}>
                 
-                <Card component={Link} to="/about">
+                <Card >
                   <CardActionArea
-                    onClick={() => navigate("/about")}
+                    onClick={() => navigate(`/productDescription/${d._id}`)}
                   >
+                    
                     <CardMedia
                       component="img"
                       height="auto"
                       image={d.image}
-                      alt="green iguana"
+                      alt="electronic items"
                     />
                     <CardContent
                       style={{ color: "white", backgroundColor: "grey" }}
@@ -47,7 +53,7 @@ export default function SimpleContainer() {
                       <Typography gutterBottom variant="h5" component="div">
                         {d.name}
                       </Typography>
-                      <Typography variant="body2">{d.price}</Typography>
+                      <Typography variant="body2">Rs.{d.price}</Typography>
                     </CardContent>
                   </CardActionArea>
                 </Card>
