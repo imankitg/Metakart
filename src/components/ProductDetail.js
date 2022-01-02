@@ -12,6 +12,7 @@ import Select from "@mui/material/Select";
 import { useParams } from "react-router-dom";
 import data from "../data";
 import Spinner from "./Spinner";
+import { useNavigate } from "react-router-dom";
 
 const ProductDetail = () => {
 
@@ -35,6 +36,8 @@ const ProductDetail = () => {
 
   console.log(productDetail, "product");
 
+  const navigate = useNavigate();
+
   return (
     <React.Fragment>
       {loading ? (
@@ -43,6 +46,7 @@ const ProductDetail = () => {
         <>
           <CssBaseline />
           <Container maxWidth="lg" style={{ paddingTop: 20, overflow:'auto' }}>
+            <Button variant="contained" style={{margin:10}} onClick={() => navigate('/')} >Go Back</Button>
             <Box sx={{ height: "100vh" }}>
               <Box sx={{ flexGrow: 1 }}>
                 <Grid container spacing={2} style={{ display: "flex" }}>
