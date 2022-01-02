@@ -9,13 +9,12 @@ function App() {
     <BrowserRouter>
       <div className="App">
         <NavBar/>
-        
         <Routes>
           <Route path="/" element={<Home/>} />
           <Route path="/productDescription/:id" element={<ProductDetail />} />
         </Routes>
-      </div>
        <Footer/>
+      </div>
     </BrowserRouter>
   );
 }

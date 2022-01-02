@@ -42,7 +42,7 @@ const ProductDetail = () => {
       ) : (
         <>
           <CssBaseline />
-          <Container maxWidth="lg" style={{ paddingTop: 20 }}>
+          <Container maxWidth="lg" style={{ paddingTop: 20, overflow:'auto' }}>
             <Box sx={{ height: "100vh" }}>
               <Box sx={{ flexGrow: 1 }}>
                 <Grid container spacing={2} style={{ display: "flex" }}>
