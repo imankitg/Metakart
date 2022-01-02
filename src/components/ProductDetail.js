@@ -13,8 +13,7 @@ import { useParams } from "react-router-dom";
 import data from "../data";
 import Spinner from "./Spinner";
 
-const Demo = (props) => {
-  // let {image,desc,name} = props;
+const ProductDetail = () => {
 
   const { id } = useParams();
   console.log(id);
@@ -31,7 +30,7 @@ const Demo = (props) => {
     const findProduct = data.filter((x) => Number(x._id) === Number(id));
     setloading(true);
     setProductDetail({ ...findProduct[0] });
-    setTimeout(() => setloading(false), 3000);
+    setTimeout(() => setloading(false), 1000);
   }, [id]);
 
   console.log(productDetail, "product");
@@ -103,18 +102,17 @@ const Demo = (props) => {
                         label="Quantity"
                         onChange={handleChange}
                       >
-                        <MenuItem value={1}>1</MenuItem>
-                        <MenuItem value={2}>2</MenuItem>
-                        <MenuItem value={3}>3</MenuItem>
+                        {[...Array(productDetail.countInStock).keys()].map((e, index) => {
+                          return(<MenuItem key={index} value={e+1}>{e+1}</MenuItem>)
+
+                        })}
+                        
                       </Select>
                     </FormControl>
                     <Button style={{ margin: 10 }} variant="contained">
                       Add to Cart
                     </Button>
                   </Grid>
-                  {/* <Grid item xs={6} md={8}>
-       
-              </Grid> */}
                 </Grid>
               </Box>
             </Box>
@@ -125,4 +123,4 @@ const Demo = (props) => {
   );
 };
 
-export default Demo;
+export default ProductDetail;

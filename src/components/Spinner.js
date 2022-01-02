@@ -3,7 +3,7 @@ import loading from './loading.gif'
 
 const Spinner = ()=> {
         return (
-            <div >
+            <div style={{display:'flex', justifyContent:'center'}} >
                 <img src={loading} alt="loading" />
             </div>
         )

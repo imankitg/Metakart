@@ -1,10 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import CssBaseline from "@mui/material/CssBaseline";
-import Spinner from "./Spinner";
-
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
-
 import Grid from "@mui/material/Grid";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
@@ -14,14 +11,14 @@ import { CardActionArea } from "@mui/material";
 import data from "../data";
 import { useNavigate } from "react-router-dom";
 
-export default function SimpleContainer() {
-  // const [loading, setLoading] = useState(false);
+export default function Home() {
+  
 
   const navigate = useNavigate();
-  // setLoading(false);
+  
   return (
     <React.Fragment>
-      {/* {loading && <Spinner/>} */}
+      
       <CssBaseline />
       <Container maxWidth="lg" style={{ paddingTop: 20 }}>
         <Box sx={{ flexGrow: 1 }}>
@@ -62,17 +59,7 @@ export default function SimpleContainer() {
           </Grid>
         </Box>
       </Container>
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          backgroundColor: "#36454F",
-          color: "white",
-          marginTop: 26
-        }}
-      >
-        <h4>Copyright &copy; Metakart 2021</h4>
-      </div>
+      
     </React.Fragment>
   );
 }
