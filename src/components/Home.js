@@ -50,7 +50,7 @@ export default function Home() {
                       <Typography gutterBottom variant="h5" component="div">
                         {d.name}
                       </Typography>
-                      <Typography variant="body2">Rs.{d.price}</Typography>
+                      <Typography variant="body2">${d.price}</Typography>
                     </CardContent>
                   </CardActionArea>
                 </Card>

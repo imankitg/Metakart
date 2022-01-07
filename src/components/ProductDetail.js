@@ -74,7 +74,7 @@ const ProductDetail = () => {
                     <hr />
 
                     <Typography variant="h5">
-                      Rs {productDetail.price}
+                      $ {productDetail.price}
                     </Typography>
 
                     <hr />
