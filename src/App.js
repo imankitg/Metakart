@@ -3,9 +3,12 @@ import ProductDetail from "./components/ProductDetail";
 import Home from "./components/Home";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
+import { Provider } from "react-redux";
+import store from './Store';
 
 function App() {
   return (
+    <Provider store={store}>
     <BrowserRouter>
       <div className="App">
         <NavBar/>
@@ -16,6 +19,7 @@ function App() {
       <Footer/>
       </div>
     </BrowserRouter>
+    </Provider>
   );
 }
 
