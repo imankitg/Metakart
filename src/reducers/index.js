@@ -1,8 +1,8 @@
 import { combineReducers } from "redux";
-import { productsReducer, productRed } from "./productReducer";
+import { productsReducer } from "./productReducer";
 
 
 export default combineReducers({
-    posts: productsReducer,
-    any: productRed
+    fetch_products: productsReducer,
+    
 });

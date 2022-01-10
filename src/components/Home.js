@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import CssBaseline from "@mui/material/CssBaseline";
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
@@ -10,11 +10,19 @@ import Typography from "@mui/material/Typography";
 import { CardActionArea } from "@mui/material";
 import data from "../data";
 import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { getAllProducts } from "../actions/productAction";
 
 export default function Home() {
   
 
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const product = useSelector(state => state.product);
+
+  useEffect(() => {
+    dispatch(getAllProducts())
+  }, [dispatch])
   
   return (
     <React.Fragment>
