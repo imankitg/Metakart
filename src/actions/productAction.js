@@ -1,4 +1,4 @@
-import { FETCH_PRODUCTS_LOADING, FETCH_PRODUCTS_SUCCESS } from "./constants";
+import { FETCH_PRODUCTS_SUCCESS } from "./constants";
 import data from "../data";
 
 

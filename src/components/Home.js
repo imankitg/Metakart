@@ -8,7 +8,7 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { CardActionArea } from "@mui/material";
-import data from "../data";
+// import data from "../data";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllProducts } from "../actions/productAction";
@@ -18,7 +18,8 @@ export default function Home() {
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const product = useSelector(state => state.product);
+  const product = useSelector(state => state.fetch_products);
+  console.log(product);
 
   useEffect(() => {
     dispatch(getAllProducts())
@@ -38,7 +39,7 @@ export default function Home() {
             spacing={{ xs: 2, md: 3 }}
             columns={{ xs: 4, sm: 8, md: 12 }}
           >
-            {data.map((d, index) => (
+            {product.products.map((d, index) => (
               <Grid item xs={12} sm={4} md={3} key={index}>
                 
                 <Card >
