@@ -7,7 +7,7 @@ const Footer = () => {
           justifyContent: "center",
           backgroundColor: "#36454F",
           color: "white",
-          marginTop: 15,
+          marginTop: 20,
         }}
       >
         <h4>Copyright &copy; Metakart 2021</h4>
