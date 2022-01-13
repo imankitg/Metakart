@@ -5,6 +5,8 @@ import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
 import { Provider } from "react-redux";
 import store from './Store';
+import LogIn from "./components/LogIn";
+import Register from "./components/Register";
 
 function App() {
   return (
@@ -15,6 +17,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Home/>} />
           <Route path="/productDescription/:id" element={<ProductDetail />} />
+          <Route path="/login" element={<LogIn/>} />
+          <Route path="/register" element={<Register/>} />
         </Routes>
       <Footer/>
       </div>

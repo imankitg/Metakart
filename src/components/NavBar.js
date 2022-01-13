@@ -7,8 +7,10 @@ import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import ShoppingCartRoundedIcon from '@mui/icons-material/ShoppingCartRounded';
 import WbSunnyRoundedIcon from '@mui/icons-material/WbSunnyRounded';
+import { useNavigate } from "react-router-dom";
 
 export default function NavBar() {
+  const navigate = useNavigate();
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static" style={{backgroundColor: 'rgb(54, 69, 79)'}} >
@@ -37,7 +39,7 @@ export default function NavBar() {
             <WbSunnyRoundedIcon />
           </IconButton>
 
-          <Button color="inherit">Login</Button>
+          <Button color="inherit" onClick={() => navigate('/login')}>Login</Button>
 
           
 
