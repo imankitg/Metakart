@@ -7,8 +7,6 @@ export const getAllProducts = () => dispatch => {
         type: FETCH_PRODUCTS_SUCCESS,
         payload: data,
     })
-
-
 }
 
 

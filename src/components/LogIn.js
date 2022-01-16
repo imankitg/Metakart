@@ -10,16 +10,6 @@ const LogIn = () => {
     const [password, setPassword] = useState("");
 
     const preventDefault = (e) => e.preventDefault();
-
-    // const [allLogIn, setAllLogIn] = useState([]);
-
-    // const submitLogIn = (e) => {
-    //     e.preventDefault();
-    //     const newLogIn = { email: email, password: password };
-    //     setAllLogIn([...allLogIn, newLogIn]);
-    //     console.log(allLogIn);
-    // }
-
     return (
         
         <Box
