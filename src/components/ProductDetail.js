@@ -9,7 +9,7 @@ import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
-import data from "../data";
+// import data from "../data";
 import Spinner from "./Spinner";
 import { useNavigate, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
@@ -33,15 +33,17 @@ const ProductDetail = () => {
     setQuantity(event.target.value);
   };
 
-  const [productDetail, setProductDetail] = useState({});
+  
+
+  // const [productDetail, setProductDetail] = useState({});
   const [loading, setloading] = useState(false);
 
-  useEffect(() => {
-    const findProduct = data.filter((x) => Number(x._id) === Number(id));
-    setloading(true);
-    setProductDetail({ ...findProduct[0] });
-    setTimeout(() => setloading(false), 1000);
-  }, [id]);
+  // useEffect(() => {
+  //   const findProduct = data.filter((x) => Number(x._id) === Number(id));
+  //   setloading(true);
+  //   setProductDetail({ ...findProduct[0] });
+  //   setTimeout(() => setloading(false), 1000);
+  // }, [id]);
 
   // console.log(productDetail, "product");
 
@@ -61,7 +63,7 @@ const ProductDetail = () => {
                 <Grid container spacing={2} style={{ display: "flex" }}>
                   <Grid item xs={12} md={6}>
                     <img
-                      src={productDetail.image}
+                      src={prodDet.productDet.image}
                       alt="airpods"
                       style={{ width: "100%" }}
                     />
@@ -77,19 +79,19 @@ const ProductDetail = () => {
                       component="div"
                       style={{ padding: 10 }}
                     >
-                      {productDetail.name}
+                      {prodDet.productDet.name}
                     </Typography>
 
                     <hr />
 
                     <Typography variant="h5">
-                      $ {productDetail.price}
+                      $ {prodDet.productDet.price}
                     </Typography>
 
                     <hr />
 
                     <Typography variant="h6" style={{ paddingTop: 30 }}>
-                      {productDetail.description}
+                      {prodDet.productDet.description}
                     </Typography>
                   </Grid>
                   <Grid item xs={12} md={3}>
@@ -99,7 +101,7 @@ const ProductDetail = () => {
                     <hr />
                     <Typography variant="h5">
                       Status:
-                      {productDetail.countInStock > 0
+                      {prodDet.productDet.countInStock > 0
                         ? "In Stock"
                         : "Out of stock"}
                     </Typography>
@@ -115,7 +117,7 @@ const ProductDetail = () => {
                         label="Quantity"
                         onChange={handleChange}
                       >
-                        {[...Array(productDetail.countInStock).keys()].map((e, index) => {
+                        {[...Array(prodDet.productDet.countInStock).keys()].map((e, index) => {
                           return(<MenuItem key={index} value={e+1}>{e+1}</MenuItem>)
 
                         })}
