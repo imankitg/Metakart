@@ -1,5 +1,5 @@
 import { combineReducers } from "redux";
-import { productsReducer } from "./productReducer";
+import { productDetailRed, productsReducer } from "./productReducer";
 
 
 // export default combineReducers({
@@ -9,6 +9,7 @@ import { productsReducer } from "./productReducer";
 
 const rootReducer = combineReducers({
     fetch_products: productsReducer,
+    productDet: productDetailRed,
 });
 
 export default rootReducer;

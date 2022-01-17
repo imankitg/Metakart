@@ -12,12 +12,22 @@ import Select from "@mui/material/Select";
 import data from "../data";
 import Spinner from "./Spinner";
 import { useNavigate, useParams } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { getProductDetails } from "../actions/productAction";
 
 const ProductDetail = () => {
 
   const { id } = useParams();
   console.log(id);
   const [quantity, setQuantity] = React.useState("");
+
+  const dispatch = useDispatch();
+  const prodDet = useSelector(state => state.productDet);
+  console.log(prodDet.productDet);
+
+  useEffect(() => {
+    dispatch(getProductDetails(id))
+  }, [dispatch, id]);
 
   const handleChange = (event) => {
     setQuantity(event.target.value);
@@ -33,7 +43,7 @@ const ProductDetail = () => {
     setTimeout(() => setloading(false), 1000);
   }, [id]);
 
-  console.log(productDetail, "product");
+  // console.log(productDetail, "product");
 
   const navigate = useNavigate();
 

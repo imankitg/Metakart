@@ -19,7 +19,7 @@ export default function Home() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const product = useSelector(state => state.fetch_products);
-  console.log(product);
+  // console.log(product);
 
   useEffect(() => {
     dispatch(getAllProducts())
