@@ -9,7 +9,7 @@ import { productDetailRed, productsReducer } from "./productReducer";
 
 const rootReducer = combineReducers({
     fetch_products: productsReducer,
-    productDet: productDetailRed,
+    product_Det: productDetailRed,
 });
 
 export default rootReducer;

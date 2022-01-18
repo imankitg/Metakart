@@ -2,7 +2,7 @@ import { FETCH_PRODUCTS_LOADING, FETCH_PRODUCTS_SUCCESS, FETCH_PRODUCT_DETAILS }
 
 const initialState = {
     products: [],
-    product: {}
+    loading: false
 };
 
 export function productsReducer (state = initialState, action) {
@@ -21,7 +21,7 @@ export function productsReducer (state = initialState, action) {
     }
 }
 
-export function productDetailRed (state = {}, action) {
+export function productDetailRed (state = {loading: false,productDet:[]}, action) {
     switch (action.type) {
         case FETCH_PRODUCTS_LOADING:
             return {

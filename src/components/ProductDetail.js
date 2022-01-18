@@ -22,7 +22,7 @@ const ProductDetail = () => {
   const [quantity, setQuantity] = React.useState("");
 
   const dispatch = useDispatch();
-  const prodDet = useSelector(state => state.productDet);
+  const prodDet = useSelector(state => state.product_Det);
   console.log(prodDet.productDet);
 
   useEffect(() => {
