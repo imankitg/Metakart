@@ -21,7 +21,7 @@ export function productsReducer (state = initialState, action) {
     }
 }
 
-export function productDetailRed (state = [], action) {
+export function productDetailRed (state = {}, action) {
     switch (action.type) {
         case FETCH_PRODUCTS_LOADING:
             return {

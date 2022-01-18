@@ -12,6 +12,7 @@ export const getAllProducts = () => dispatch => {
 export const getProductDetails = (productId) => dispatch => {
     const findProduct = data.filter((x) => Number(x._id) === Number(productId));
     console.log(findProduct);
+    console.log(productId);
     dispatch({
         type: FETCH_PRODUCT_DETAILS,
         payload: findProduct[0],
